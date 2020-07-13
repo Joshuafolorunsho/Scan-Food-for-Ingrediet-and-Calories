@@ -3,14 +3,14 @@
    if (isset($_POST["submit"])) {
       $email = $_POST["email"];
       
-      $connection = mysqli_connect("localhost", "root", "", "fscan user");
+      $connection = mysqli_connect("eu-cdbr-west-03.cleardb.net", "baf86ee77677b7", "7ad43e4f", "heroku_ac6c00859a69057");
       if ($email) {
          if($connection) {
             echo "we are connected";
          } else {
             die("database connection failed");
          }
-         $query = "INSERT INTO users(email) ";
+         $query = "INSERT INTO user(email) ";
          $query .= "VALUES ('$email')"; 
 
          $result = mysqli_query($connection, $query);
