@@ -38,7 +38,7 @@
                                     if (isset($_POST["submit"])) {
                                        $email = $_POST["email"];
                                        
-                                       // $connection = mysqli_connect("eu-cdbr-west-03.cleardb.net", "baf86ee77677b7", "7ad43e4f", "heroku_ac6c00859a69057");
+                                       $connection = mysqli_connect("eu-cdbr-west-03.cleardb.net", "baf86ee77677b7", "7ad43e4f", "heroku_ac6c00859a69057");
                                        if ($email) {
                                           if(!$connection) {
                                              die("database connection failed");
