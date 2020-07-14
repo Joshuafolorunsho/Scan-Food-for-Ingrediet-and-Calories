@@ -10,6 +10,10 @@ html {
    background-size: cover;
 }
 
+.logo {
+   max-width: 70px;
+}
+
 .header__info {
    margin-top: 70px;
 }

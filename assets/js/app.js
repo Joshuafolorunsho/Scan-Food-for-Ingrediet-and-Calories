@@ -22,13 +22,22 @@ function validateEmail(email) {
    if (validateEmail(email)) {
      $result.text("Successful. We'll notify you when our app is launched");
      $result.css("color", "green");
+     setTimeout(() => {
+      $result.css('display', 'none');
+     }, 2000)
    } else {
       if (email.length == 0) {
-         $result.text('Field cannot be left empty')
+         $result.text('Field cannot be left empty, try again')
          $result.css("color", "red");
+         setTimeout(() => {
+            $result.text('');
+           }, 2000)
       } else {
-         $result.text(email + " is not valid :(");
+         $result.text("Invalid email, try again");
          $result.css("color", "red");
+         setTimeout(() => {
+            $result.css('display', 'none');
+           }, 2000);
       }
    }
    return false;

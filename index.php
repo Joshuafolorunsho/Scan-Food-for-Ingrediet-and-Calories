@@ -14,15 +14,15 @@
             <nav class="row py-4">
                <div class="col">
                   <div class="logo">
-                     <img src="assets/images/fscan-logo.svg" alt="">
+                     <img class="img-fluid" src="assets/images/fscan-logo.svg" alt="">
                   </div>
                </div>
             </nav>
          </div>
          <section>
             <div class="container">
-               <div class="">
-                  <div class="col-sm-5">
+               <div class="row">
+                  <div class="col-md-5">
                      <div class="header__info">
                         <h5 class="header__title d-flex align-items-center text-uppercase mb-4">We are launching soon</h5>
                         <h1 class="header__description mb-4">
