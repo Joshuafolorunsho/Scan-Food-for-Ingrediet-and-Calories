@@ -20,7 +20,7 @@ function validateEmail(email) {
    $result.text("");
  
    if (validateEmail(email)) {
-     $result.text("Successful");
+     $result.text("Successful. We'll notify you when our app is launched");
      $result.css("color", "green");
    } else {
       if (email.length == 0) {
