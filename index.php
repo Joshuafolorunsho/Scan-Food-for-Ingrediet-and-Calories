@@ -1,57 +1,80 @@
-<?php
-
-   if (isset($_POST["submit"])) {
-      $email = $_POST["email"];
-      
-      $connection = mysqli_connect("eu-cdbr-west-03.cleardb.net", "baf86ee77677b7", "7ad43e4f", "heroku_ac6c00859a69057");
-      if ($email) {
-         if($connection) {
-            echo "we are connected";
-         } else {
-            die("database connection failed");
-         }
-         $query = "INSERT INTO user(email) ";
-         $query .= "VALUES ('$email')"; 
-
-         $result = mysqli_query($connection, $query);
-
-         if (!$result) {
-            die('Query Failed' . mysqli_error());
-         }
-      } else {
-         echo "Field cannot be blank";
-      }
-
-   }
-
-?>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Scan Food for Ingrediets and Calories</title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="./assets/css/main.css">
-   </head>
-   <body>
-      <!--[if lt IE 7]>
-         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-      <![endif]-->
-      <form action="index.php" method="post" id="subscribe-form">
-         <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Scan Food for Ingrediets and Calories</title>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="assets/css/bootstrap.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+      <header class="header">
+         <div class="container">
+            <nav class="row py-4">
+               <div class="col">
+                  <div class="logo">
+                     <img src="assets/images/logo.svg" alt="">
+                  </div>
+               </div>
+            </nav>
          </div>
-         <div>
-            <input type="submit" value="subscribe" name="submit">
-         </div>
-      </form>
+         <section>
+            <div class="container">
+               <div class="">
+                  <div class="col-sm-5">
+                     <div class="header__info">
+                        <h5 class="header__title d-flex align-items-center text-uppercase mb-4">We are launching soon</h5>
+                        <h1 class="header__description mb-4">
+                           Easiest way to identify your allergens with just a click Using our food scan app
+                        </h1>
+                        <button class="btn btn-custom d-flex align-items-center" id="notify-me">Notify me <img class="pl-2" src="./assets/images/right-arrow.svg" alt="arrow right"></button>
+                        <form action="index.php" class="d-none" method="post" id="subscribe-form">
+                              <div class="position-relative">
+                                 <!-- <label for="email">Email</label> -->
+                                 <input type="text" class="email-input" name="email" id="email" placeholder="Enter your email">
+                                 <input type="submit" value="Notify me" class="btn btn-custom submit position-absolute" name="submit" id="validate">
+                                 <?php
+                                    if (isset($_POST["submit"])) {
+                                       $email = $_POST["email"];
+                                       
+                                       // $connection = mysqli_connect("eu-cdbr-west-03.cleardb.net", "baf86ee77677b7", "7ad43e4f", "heroku_ac6c00859a69057");
+                                       if ($email) {
+                                          if(!$connection) {
+                                             die("database connection failed");
+                                          }
+                                          $query = "INSERT INTO user(email) ";
+                                          $query .= "VALUES ('$email')"; 
 
-      <!-- <script defer src="./assets/js/app.js"></script> -->
-   </body>
+                                          $result = mysqli_query($connection, $query);
+
+                                          if (!$result) {
+                                             die('Query Failed' . mysqli_error());
+                                          }
+                                       } else {
+                                          echo "Field cannot be blank";
+                                       }
+
+                                    }
+                                 ?>
+                                 </div>
+                                 <p id="result"></p>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </header>
+      <main>
+         <div class="container">
+          
+         </div>
+      </main>
+
+      <script src="./assets/js/jquery.js"></script>
+      <script src="./assets/js/popper.js"></script>
+      <script src="./assets/js/bootstrap.js"></script>
+      <script defer src="./assets/js/app.js"></script>
+</body>
 </html>
