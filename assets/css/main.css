@@ -1,3 +1,79 @@
-input["submit"] {
-   cursor: pointer;
+html {
+   font-family: 'Roboto', sans-serif;
+}
+
+.header {
+   background-image: url('../images/Hero-bg.svg');
+   color: white;
+   width: 100%;
+   height: 80vh;
+   background-size: cover;
+}
+
+.header__info {
+   margin-top: 70px;
+}
+
+.header__title {
+   font-weight: 500;
+   font-size: 14px;
+   color: #F9A825;
+}
+
+.header__title::before {
+   content: '';
+   width: 50px;
+   height: 3px;
+   margin-right: 10px;
+   background-color: #F9A825;
+}
+
+.header__description {
+   font-size: 28px;
+}
+
+.btn-custom {
+   background-color: #F9A825;
+   color: #fff;
+}
+
+.btn-custom:hover {
+   background-color: #df9c31;
+   color: #fff;
+}
+
+#subscribe-form {
+   margin-top: -45px;
+}
+
+.email-input {
+   width: 100%;
+   height: 45px;
+   border-radius: 8px;
+   padding: 5px 30px;
+   background-color: #e5eaff;
+   border: none;
+}
+
+.email-input::placeholder {
+   color: #555;
+}
+
+
+.submit {
+   top: 50%;
+   right: 4px;
+   transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+   
+   .header__info {
+      margin-top: 100px;
+   }
+
+   
+   /* .header > section {
+      background-image: url('../images/phone-splash-screen.svg');
+   } */
 }
