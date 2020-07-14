@@ -14,7 +14,7 @@
             <nav class="row py-4">
                <div class="col">
                   <div class="logo">
-                     <img src="assets/images/logo.svg" alt="">
+                     <img src="assets/images/fscan-logo.svg" alt="">
                   </div>
                </div>
             </nav>
