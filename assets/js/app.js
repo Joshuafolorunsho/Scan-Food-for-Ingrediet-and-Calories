@@ -20,7 +20,7 @@ function validateEmail(email) {
    $result.text("");
  
    if (validateEmail(email)) {
-     $result.text(email + " is valid :)");
+     $result.text("Successful");
      $result.css("color", "green");
    } else {
       if (email.length == 0) {
