@@ -93,3 +93,45 @@ const getPos = function (current, active) {
 
   return diff;
 };
+
+
+
+
+const basicScrollTop = function () {  
+
+   // The button
+   const btnTop = document.querySelector('#goTop');
+   // Reveal the button
+   const btnReveal = function () { 
+
+     if (window.scrollY >= 300) {
+       btnTop.classList.add('is-visible');
+       document.querySelector('html').style.scrollBehavior = 'auto';
+      } else {
+         btnTop.classList.remove('is-visible');
+     }    
+   }  
+   
+   var TopscrollTo = function () {
+     if(window.scrollY!=0) {
+       setTimeout(function() {
+         window.scrollTo(0,window.scrollY-30);
+         TopscrollTo();
+       }, 5);
+     }
+   }
+   // Listeners
+   window.addEventListener('scroll', btnReveal);
+   btnTop.addEventListener('click', TopscrollTo);  
+     
+ };
+ basicScrollTop();
+const bottom = 10000;
+const scrollToBottom = () => {
+   setTimeout(() => {
+      document.querySelector('html').style.scrollBehavior = 'smooth';
+      window.scrollTo(0,  bottom);
+   }, 500);
+}
+
+notifyBtn.addEventListener('click',  scrollToBottom);
