@@ -152,7 +152,7 @@
                   ingredients with fScan.
                 </p>
                 <button
-                  class="btn btn-custom font-weight-bold justify-content-start align-items-center"
+                  class="btn btn-custom font-weight-bold justify-content-start align-items-center mt-3"
                   id="notify-me"
                 >
                   Notify me
@@ -164,10 +164,8 @@
                 </button>
                 <form
                   action="index.php"
-                  class="d-none"
+                  class="d-none subscribe-form"
                   method="post"
-                  class="subscribe-form"
-                  id="subscribe-form"
                 >
                   <div class="position-relative">
                     <label class="hide" for="email">Email</label>
@@ -309,7 +307,7 @@
                   />
                 </div>
                 <h6 class="feature__sub-title py-3 heading-3 text-capitalize">
-                  Never Worry About what you eat
+                 Scan your food
                 </h6>
                 <p class="feature__sub-description heading-4">
                   With just a few clicks, you can scan unlimited number of food
@@ -352,9 +350,7 @@
                   Eat Healthy and More
                 </h6>
                 <p class="feature__sub-description heading-4">
-                  With your allergens in mind, we are not just bringing the
-                  option of scanning your food, but the option of giving you
-                  essential healthier choices.
+                  With your allergens in mind, we are not just bringing the option of scanning your food, but also giving you essential healtier choices base on your allergens.
                 </p>
               </div>
             </div>
@@ -364,7 +360,7 @@
       <section class="how-it-works">
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-md-8">
+            <div class="col-md-8 col-xl-7">
               <h3
                 class="how-it-works__title color-blue heading-2 font-weight-bold heading-2 text-center text-md-left"
                 data-aos="fade-up"
@@ -372,7 +368,7 @@
                 How fScan works
               </h3>
               <p
-                class="heading-4 text-center text-md-left pb-2 pb-4"
+                class="heading-4 text-center text-md-left pb-2 pb-4 max-text"
                 data-aos="fade-up"
               >
                 With this few steps, you can enjoy your food without wondering
@@ -389,7 +385,7 @@
                     Scan unlimited number of food
                   </h5>
                   <p class="how-it-works__sub-description heading-4">
-                    Find out what is in your food with just glance using our app
+                    Find out what is in your food with just glance using our app.
                   </p>
                 </div>
                 <div class="how-it-works__process" data-aos="fade-right">
@@ -402,8 +398,7 @@
                     Log your meals in seconds.
                   </h5>
                   <p class="how-it-works__sub-description heading-4">
-                    You can also scan food from your gallery and get instant
-                    overview with our advanced image recognition.
+                    You can also scan food from your gallery and get instant overview.
                   </p>
                 </div>
                 <div class="how-it-works__process" data-aos="fade-left">
@@ -417,7 +412,7 @@
                   </h5>
                   <p class="how-it-works__sub-description heading-4">
                     With a click, instantly you will get result of calories,
-                    macros and micronutrients
+                    macros and micronutrients.
                   </p>
                 </div>
                 <div class="how-it-works__process" data-aos="fade-right">
@@ -430,12 +425,12 @@
                     Scan unlimited number of food
                   </h5>
                   <p class="how-it-works__sub-description heading-4">
-                    Find out what is in your food with just glance using our app
+                    Find out what is in your food with just glance using our app.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 d-none d-md-block scan-mock-up">
+            <div class="col-md-4  col-xl-5 d-none d-md-block scan-mock-up">
               <img
                 class="img-fluid lazyload"
                 data-src="./assets/images/phone-scanning-food-with-edge.svg"
@@ -540,7 +535,7 @@
                   Don't Hesitate To Subscribe
                 </h2>
                 <p
-                  class="subscribe__description text-middle text-center heading-4 mb-4"
+                  class="subscribe__description text-middle text-center heading-4 mb-3 mb-md-4"
                   data-aos="fade-up"
                 >
                   Subscribe to get notified on when our app will be launched and
@@ -555,7 +550,6 @@
                   action="index.php"
                   method="post"
                   class="subscribe-form"
-                  id="subscribe-form-2"
                 >
                   <div class="position-relative">
                     <label class="hide" for="email">Email</label>

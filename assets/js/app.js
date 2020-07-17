@@ -15,7 +15,7 @@ AOS.init();
 
 
 notifyBtn.addEventListener("click", () => {
-  form.classList.add("d-block");
+  form.classList.remove("d-none");
   notifyBtn.classList.add("d-none");
 });
 
