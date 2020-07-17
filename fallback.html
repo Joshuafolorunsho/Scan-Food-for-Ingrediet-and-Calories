@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scan Food for Ingrediets and Calories</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/assets/images/icons/icon-92x92.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="hsl(230, 98%, 18%)" />
+    <meta name="theme-color" content="hsl(230, 98%, 18%)" />
+  </head>
+      <style>
+         .fall-back{
+				font-size: 1.7rem;
+				text-align: center;
+            display: flex;
+            flex-direction: column;
+            place-content: center;
+            height: 92vh;
+            line-height: 1.6;
+            color: red;
+         }
+         .fall-back-title{
+            font-size: 5rem;
+         }
+         .fall-back-description{
+            font-style: italic;
+            margin-bottom: 12px;
+
+         }
+         .fall-back-btn{
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background-color: hsl(210, 50%, 15%);
+            padding: 8px 15px;
+            border: 2px solid transparent;
+         }
+         
+         .fall-back-btn:hover{
+				background-color: #fff;
+				text-decoration: none;
+            color: hsl(210, 50%, 15%);
+            border-color: hsl(210, 50%, 15%);
+         }
+
+         @media only screen and (min-width: 768px){
+            .fall-back{
+               height: 100vh;
+            }
+         }
+      </style>
+	</head>
+	<body class="container">
+		<main>
+			<section class="fall-back">
+            <h4 class="center fall-back-title">OOPS!</h4>
+            <p class="center fall-back-description">Currently you cannot view this page offline</p>
+            <p class="center">
+               <a href="/index.html" class="fall-back-btn">Go to home page</a>
+            </p>
+         </section>
+
+		</main>
+	</body>
+</html>
+
+

@@ -1,7 +1,18 @@
 const validateBtn = document.querySelector("#validate");
-const form = document.querySelector("#subscribe-form");
+const form = document.querySelector(".subscribe-form");
 const notifyBtn = document.querySelector("#notify-me");
 const emailInput = document.querySelector("#email");
+
+// Loader
+window.addEventListener('load', () => {
+  loader.classList.add('none');
+  document.body.classList.remove('hide-scroll-bar');
+});
+
+// Activate Animate on scroll
+AOS.init();
+
+
 
 notifyBtn.addEventListener("click", () => {
   form.classList.add("d-block");
@@ -14,7 +25,7 @@ function validateEmail(email) {
 }
 
 function validate() {
-  const $result = $("#result");
+  const result = $(".result");
   const email = $("#email").val();
   $result.text("");
 
@@ -126,12 +137,10 @@ const basicScrollTop = function () {
      
  };
  basicScrollTop();
-const bottom = 10000;
-const scrollToBottom = () => {
-   setTimeout(() => {
-      document.querySelector('html').style.scrollBehavior = 'smooth';
-      window.scrollTo(0,  bottom);
-   }, 500);
-}
 
-notifyBtn.addEventListener('click',  scrollToBottom);
+//  Check to see if serverworker exist, if yes. Register
+//  if ('serviceWorker' in navigator) {
+//   navigator.serviceWorker.register('/sw.js')
+//      .then(reg => {})
+//      .catch(err => {})
+// }
