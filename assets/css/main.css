@@ -16,36 +16,6 @@ body {
   padding: 0;
 }
 
-/* loader */
-/*Loader*/
-#loader {
-  background-color: #01115D;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: ease;
-}
-
-.hide-scroll-bar {
-	overflow-y: hidden;
-}
-
-#loader > svg {
-  height: 17rem;
-  text-align: center;
-  margin: 0 auto;
-}
-
-#loader.none {
-  visibility: hidden;
-  opacity: 0;
-}
 
 #goTop {
   position: fixed;

@@ -7,10 +7,6 @@ const emailInput = document.querySelector("#email");
 // Activate Animate on scroll
 AOS.init();
 
-window.addEventListener('load', () => {
-	loader.classList.add('none');
-	document.body.classList.remove('hide-scroll-bar');
-});
 
 notifyBtn.addEventListener("click", () => {
   form.classList.remove("d-none");
@@ -56,29 +52,6 @@ function validate() {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   validate();
-  const emailInput = event.target.elements.email.value;
-  
-  fetch('index.php', {
-    method: 'POST', 
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({email: emailInput}),
-  })
-  .then(response => {
-    console.log(response.text())
-    // response.json()
-  })
-  .then(data => {
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-  // notifyBtn.add('click',() => {
-  //   window.addEventListener('load', () => {
-  //     loader.classList.add('none');
-  // })
 });
 
 /* Showcase */

@@ -32,39 +32,7 @@
     <meta name="theme-color" content="hsl(230, 98%, 18%)" />
   </head>
 
-  <body class="color-blue hide-scroll-bar">
-    <!-- Loader -->
-    
-    <div id="loader">
-    <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-  viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-  <circle fill="#fff" stroke="none" cx="6" cy="50" r="6">
-    <animate
-      attributeName="opacity"
-      dur="1s"
-      values="0;1;0"
-      repeatCount="indefinite"
-      begin="0.1"/>    
-  </circle>
-  <circle fill="#fff" stroke="none" cx="26" cy="50" r="6">
-    <animate
-      attributeName="opacity"
-      dur="1s"
-      values="0;1;0"
-      repeatCount="indefinite" 
-      begin="0.2"/>       
-  </circle>
-  <circle fill="#fff" stroke="none" cx="46" cy="50" r="6">
-    <animate
-      attributeName="opacity"
-      dur="1s"
-      values="0;1;0"
-      repeatCount="indefinite" 
-      begin="0.3"/>     
-  </circle>
-</svg>
-    </div>
-
+  <body class="color-blue">
     <!-- Header starts here -->
     <header class="header">
       <div class="container">
@@ -186,7 +154,7 @@
         </div>
       </section>
     </header>
-    <!-- Loader starts here -->
+
 
     <!-- Scroll to the top button -->
     <button id="goTop">top</button>
@@ -481,84 +449,8 @@
           </div>
         </div>
       </section>
-      <section class="subscribe">
-        <div class="container">
-          <div class="subscribe-text">
-            <div class="row">
-              <div class="col">
-                <h2
-                  class="subscribe__title text-center color-blue heading-2 font-weight-bold"
-                  data-aos="fade-up"
-                >
-                  Don't Hesitate To Subscribe
-                </h2>
-                <p
-                  class="subscribe__description text-middle text-center heading-4 mb-3 mb-md-4"
-                  data-aos="fade-up"
-                >
-                  Subscribe to get notified on when our app will be launched and
-                  be the first to get our exclusive premium access to unlimited
-                  health care services.
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <form
-                  action="index.php"
-                  method="post"
-                  class="subscribe-form"
-                >
-                  <div class="position-relative">
-                    <label class="hide" for="email">Email</label>
-                    <input
-                      type="email"
-                      class="email-input"
-                      name="email"
-                      id="email"
-                      placeholder="Enter your email"
-                      required
-                    />
-                    <input
-                      type="submit"
-                      value="Notify me"
-                      class="btn btn-custom font-weight-bold submit position-absolute"
-                      name="submit"
-                      id="validate"
-                    />
-                  </div>
-                   <?php
-                              if (isset($_POST["submit"])) {
-                                 $email = $_POST["email"];
-                                 
-                                 // $connection = mysqli_connect("eu-cdbr-west-03.cleardb.net", "baf86ee77677b7", "7ad43e4f", "heroku_ac6c00859a69057");
-                                 if ($email) {
-                                    if(!$connection) {
-                                       die("database connection failed");
-                                    }
-                                    $query = "INSERT INTO user(email) ";
-                                    $query .= "VALUES ('$email')"; 
       
-                                    $result = mysqli_query($connection, $query);
       
-                                    if (!$result) {
-                                       die('Query Failed' . mysqli_error());
-                                    }
-                                 } else {
-                                       echo "<p style='color:red'>";
-                                       echo "Field cannot be blank";
-                                       echo "<p>";
-                                 }
-      
-                              }
-                           ?> 
-                  <p class="result"></p>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
     <!-- Main section ends here -->
 
