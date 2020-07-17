@@ -50,7 +50,6 @@ function validate() {
 }
 
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
   validate();
 });
 

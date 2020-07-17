@@ -25,7 +25,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <!-- <link rel="manifest" href="/manifest.json" /> -->
+    <link rel="manifest" href="/manifest.json" />
     <!-- ios support -->
     <link rel="apple-touch-icon" href="/assets/images/icons/icon-92x92.png" />
     <meta name="apple-mobile-web-app-status-bar" content="hsl(230, 98%, 18%)" />
@@ -145,7 +145,7 @@
               data-aos-duration="4000"
             >
               <img
-                class="hero-img img-fluid"
+                class="hero-img img-fluid text-md-center"
                 src="./assets/images/screenshot-3.png"
                 alt="fscan home screen"
               />
@@ -157,7 +157,13 @@
 
 
     <!-- Scroll to the top button -->
-    <button id="goTop">top</button>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <button id="goTop">top</button>
+        </div>
+      </div>
+    </div>
 
     <!-- Main section starts here -->
     <main>
@@ -450,7 +456,7 @@
         </div>
       </section>
       
-      
+
     </main>
     <!-- Main section ends here -->
 
