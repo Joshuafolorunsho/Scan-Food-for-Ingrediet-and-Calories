@@ -400,12 +400,11 @@ main section {
 }
 
 .carousel__item:nth-child(5) {
-  background-image: url("../images/Screenshot-3.png");
+  background-image: url("../images/screenshot-3.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-/* TODO: CHANGE TO SAVE RESULT */
 .carousel__item:nth-child(6) {
   background-image: url("../images/screenshot\ 6.png");
   background-repeat: no-repeat;
