@@ -3,16 +3,14 @@ const form = document.querySelector(".subscribe-form");
 const notifyBtn = document.querySelector("#notify-me");
 const emailInput = document.querySelector("#email");
 
-// Loader
-window.addEventListener('load', () => {
-  loader.classList.add('none');
-  document.body.classList.remove('hide-scroll-bar');
-});
 
 // Activate Animate on scroll
 AOS.init();
 
-
+window.addEventListener('load', () => {
+	loader.classList.add('none');
+	document.body.classList.remove('hide-scroll-bar');
+});
 
 notifyBtn.addEventListener("click", () => {
   form.classList.remove("d-none");
@@ -25,13 +23,15 @@ function validateEmail(email) {
 }
 
 function validate() {
-  const result = $(".result");
+  $result = $(".result");
   const email = $("#email").val();
   $result.text("");
 
   if (validateEmail(email)) {
     $result.text("Successful. We'll notify you when our app is launched");
     $result.css("color", "green");
+    document.querySelector("input[type='email']").value = '';
+    $result.css("font-size", "1.5rem");
     setTimeout(() => {
       $result.css("display", "none");
     }, 2000);
@@ -56,6 +56,29 @@ function validate() {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   validate();
+  const emailInput = event.target.elements.email.value;
+  
+  fetch('index.php', {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({email: emailInput}),
+  })
+  .then(response => {
+    console.log(response.text())
+    // response.json()
+  })
+  .then(data => {
+    console.log('Success:', data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+  // notifyBtn.add('click',() => {
+  //   window.addEventListener('load', () => {
+  //     loader.classList.add('none');
+  // })
 });
 
 /* Showcase */
@@ -104,8 +127,6 @@ const getPos = function (current, active) {
 
   return diff;
 };
-
-
 
 
 const basicScrollTop = function () {  

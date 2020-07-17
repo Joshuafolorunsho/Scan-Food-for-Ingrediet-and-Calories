@@ -25,84 +25,46 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="manifest" href="/manifest.json" />
+    <!-- <link rel="manifest" href="/manifest.json" /> -->
     <!-- ios support -->
     <link rel="apple-touch-icon" href="/assets/images/icons/icon-92x92.png" />
     <meta name="apple-mobile-web-app-status-bar" content="hsl(230, 98%, 18%)" />
     <meta name="theme-color" content="hsl(230, 98%, 18%)" />
   </head>
 
-  <body class="color-blue hide-scroll-bar"">
-    <!-- Loader starts here -->
+  <body class="color-blue hide-scroll-bar">
+    <!-- Loader -->
+    
     <div id="loader">
-      <div class="preloader">
-        <div class="preloader__ring">
-          <div class="preloader__sector">f</div>
-          <div class="preloader__sector">S</div>
-          <div class="preloader__sector"><span>c</span></div>
-          <div class="preloader__sector">a</div>
-          <div class="preloader__sector">n</div>
-          <div class="preloader__sector">.</div>
-          <div class="preloader__sector">.</div>
-          <div class="preloader__sector">.</div>
-          <div class="preloader__sector">.</div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-        </div>
-        <div class="preloader__ring">
-          <div class="preloader__sector">f</div>
-          <div class="preloader__sector">S</div>
-          <div class="preloader__sector"><span>c</span></div>
-          <div class="preloader__sector">a</div>
-          <div class="preloader__sector">n</div>
-          <div class="preloader__sector">.</div>
-          <div class="preloader__sector">.</div>
-          <div class="preloader__sector">.</div>
-          <div class="preloader__sector">.</div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-          <div class="preloader__sector"></div>
-        </div>
-      </div>
+    <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+  <circle fill="#fff" stroke="none" cx="6" cy="50" r="6">
+    <animate
+      attributeName="opacity"
+      dur="1s"
+      values="0;1;0"
+      repeatCount="indefinite"
+      begin="0.1"/>    
+  </circle>
+  <circle fill="#fff" stroke="none" cx="26" cy="50" r="6">
+    <animate
+      attributeName="opacity"
+      dur="1s"
+      values="0;1;0"
+      repeatCount="indefinite" 
+      begin="0.2"/>       
+  </circle>
+  <circle fill="#fff" stroke="none" cx="46" cy="50" r="6">
+    <animate
+      attributeName="opacity"
+      dur="1s"
+      values="0;1;0"
+      repeatCount="indefinite" 
+      begin="0.3"/>     
+  </circle>
+</svg>
     </div>
-    <!-- Loader starts here -->
+
     <!-- Header starts here -->
     <header class="header">
       <div class="container">
@@ -111,8 +73,8 @@
             <div class="logo">
               <a href="/">
                 <img
-                  class="img-fluid lazyload"
-                  data-src="assets/images/fscan-logo.svg"
+                  class="img-fluid"
+                  src="assets/images/fscan-logo.svg"
                   alt="fscan logo"
                 />
               </a>
@@ -170,11 +132,12 @@
                   <div class="position-relative">
                     <label class="hide" for="email">Email</label>
                     <input
-                      type="text"
+                      type="email"
                       class="email-input"
                       name="email"
                       id="email"
                       placeholder="Enter your email"
+                      required
                     />
                     <input
                       type="submit"
@@ -184,31 +147,26 @@
                       id="validate"
                     />
                   </div>
-                  <!-- <!-- <?php 
-                                    if (isset($_POST["submit"])) {
-                                       $email = $_POST["email"];
-                                       
-                                       // $connection = mysqli_connect("eu-cdbr-west-03.cleardb.net", "baf86ee77677b7", "7ad43e4f", "heroku_ac6c00859a69057");
-                                       if ($email) {
-                                          if(!$connection) {
-                                             die("database connection failed");
-                                          }
-                                          $query = "INSERT INTO user(email) ";
-                                          $query .= "VALUES ('$email')"; 
-            
-                                          $result = mysqli_query($connection, $query);
-            
-                                          if (!$result) {
-                                             die('Query Failed' . mysqli_error());
-                                          }
-                                       } else {
-                                             echo "<p style='color:red'>";
-                                             echo "Field cannot be blank";
-                                             echo "<p>";
-                                       }
-            
-                                    }
-                                 ?> -->
+                  <?php 
+                          if (isset($_POST["submit"])) {
+                              $email = $_POST["email"];
+                              
+                              $connection = mysqli_connect("eu-cdbr-west-03.cleardb.net", "baf86ee77677b7", "7ad43e4f", "heroku_ac6c00859a69057");
+                              if ($email) {
+                                if(!$connection) {
+                                    die("database connection failed");
+                                }
+                                $query = "INSERT INTO user(email) ";
+                                $query .= "VALUES ('$email')"; 
+  
+                                $result = mysqli_query($connection, $query);
+  
+                                if (!$result) {
+                                    die('Query Failed' . mysqli_error());
+                                }
+                              }   
+                          }
+                  ?> 
                   <p class="result"></p>
                 </form>
               </div>
@@ -219,8 +177,8 @@
               data-aos-duration="4000"
             >
               <img
-                class="hero-img img-fluid lazyload"
-                data-src="./assets/images/fscan home screen.svg"
+                class="hero-img img-fluid"
+                src="./assets/images/screenshot-3.png"
                 alt="fscan home screen"
               />
             </div>
@@ -239,13 +197,12 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-sm-6 welcome-screen d-none d-sm-block">
-              <div class="box-1"></div>
+
               <img
                 class="img-fluid lazyload"
-                data-src="./assets/images/screenshot 1.svg"
+                data-src="./assets/images/screenshot 1.png"
                 alt="phone mockup"
               />
-              <div class="box-2"></div>
             </div>
             <div class="col-sm-6 pt-5 py-sm-0">
               <h2
@@ -360,7 +317,7 @@
       <section class="how-it-works">
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-md-8 col-xl-7">
+            <div class="col-md-8">
               <h3
                 class="how-it-works__title color-blue heading-2 font-weight-bold heading-2 text-center text-md-left"
                 data-aos="fade-up"
@@ -382,7 +339,7 @@
                     alt="process one"
                   />
                   <h5 class="how-it-works__sub-title heading-3">
-                    Scan unlimited number of food
+                    Get accurate and detailed review with ease
                   </h5>
                   <p class="how-it-works__sub-description heading-4">
                     Find out what is in your food with just glance using our app.
@@ -395,7 +352,7 @@
                     alt="process two"
                   />
                   <h5 class="how-it-works__sub-title heading-3">
-                    Log your meals in seconds.
+                    Log your meals in seconds with our advanced image recognition
                   </h5>
                   <p class="how-it-works__sub-description heading-4">
                     You can also scan food from your gallery and get instant overview.
@@ -408,11 +365,11 @@
                     alt="process three"
                   />
                   <h5 class="how-it-works__sub-title heading-3">
-                    Get the result of your scan
+                    Get the result of your scan in seconds
                   </h5>
                   <p class="how-it-works__sub-description heading-4">
                     With a click, instantly you will get result of calories,
-                    macros and micronutrients.
+                    macros and micronutrients in seconds.
                   </p>
                 </div>
                 <div class="how-it-works__process" data-aos="fade-right">
@@ -422,15 +379,15 @@
                     alt="process four"
                   />
                   <h5 class="how-it-works__sub-title heading-3">
-                    Scan unlimited number of food
+                    Save your scanned activities and keep track of your goals
                   </h5>
                   <p class="how-it-works__sub-description heading-4">
-                    Find out what is in your food with just glance using our app.
+                    Our food diary helps you understand your eating habits, making you achieve a healthy goal.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-4  col-xl-5 d-none d-md-block scan-mock-up">
+            <div class="col-md-4 d-none d-md-block scan-mock-up">
               <img
                 class="img-fluid lazyload"
                 data-src="./assets/images/phone-scanning-food-with-edge.svg"
@@ -463,16 +420,16 @@
                 </div>
                 <ul class="pt-1 mx-auto other-benefits__lists list-unstyled">
                   <li class="other-benefits__item heading-4" data-aos="fade-up">
-                    It is <span>FREE</span>
+                    <div class="dot"></div> <div>It is <span>FREE</span></div> 
                   </li>
                   <li class="other-benefits__item heading-4" data-aos="fade-up">
-                    Make better choices on your diet
+                    <div class="dot"></div> Make better choices on your diet
                   </li>
                   <li class="other-benefits__item heading-4" data-aos="fade-up">
-                    Know what you can actually consume
+                    <div class="dot"></div> Know what you can actually consume
                   </li>
                   <li class="other-benefits__item heading-4" data-aos="fade-up">
-                    Visualizing is energizing
+                    <div class="dot"></div> Visualizing is energizing
                   </li>
                 </ul>
               </div>
@@ -484,9 +441,10 @@
                 Create your own health journey
               </h2>
               <p class="heading-4">
-                To help you reach your health goals and customize your health
-                journey, you can now add your favorites food scans to your diary
-                to keep track of your daily intake.
+              fScan figures out the foods in the picture, letting you track calories and nutrients without the hassle of entering items by hand. 
+              Whether you're trying to lose weight, eat more healthily, or just want more insight into your diet, fScan got all it take to make it possible. 
+              <br> <br>
+              To help you reach your health goals and customize your health journey, you can now add your favorites food scans to your diary to keep track of your daily intake.
               </p>
             </div>
           </div>
@@ -495,7 +453,7 @@
       <section class="showcase py-5">
         <div class="container">
           <h2
-            class="showcase__title text-center color-blue heading-2 font-weight-bold"
+            class="py-sm-5 showcase__title text-center color-blue heading-2 font-weight-bold"
             data-aos="fade-up"
           >
             Screenshots from our Awesome App
@@ -554,11 +512,12 @@
                   <div class="position-relative">
                     <label class="hide" for="email">Email</label>
                     <input
-                      type="text"
+                      type="email"
                       class="email-input"
                       name="email"
                       id="email"
                       placeholder="Enter your email"
+                      required
                     />
                     <input
                       type="submit"
@@ -568,7 +527,7 @@
                       id="validate"
                     />
                   </div>
-                  <!-- <?php
+                   <?php
                               if (isset($_POST["submit"])) {
                                  $email = $_POST["email"];
                                  
@@ -592,7 +551,7 @@
                                  }
       
                               }
-                           ?> -->
+                           ?> 
                   <p class="result"></p>
                 </form>
               </div>
